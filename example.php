@@ -52,7 +52,7 @@
 
 // TODO
 // Integrer les langues (champs/value) (http://www.prestashop.com/forums/index.php?/topic/189016-questions-sur-la-creation-de-modules-mvc/page__view__findpost__p__936271)
-// Integrer un fichier à télécharger (http://www.prestashop.com/forums/index.php?/topic/189016-questions-sur-la-creation-de-modules-mvc/page__view__findpost__p__939093)
+// Integrer un fichier ï¿½ tï¿½lï¿½charger (http://www.prestashop.com/forums/index.php?/topic/189016-questions-sur-la-creation-de-modules-mvc/page__view__findpost__p__939093)
 // Integrer des commandes sur addRowAction
 
 // Security
@@ -158,6 +158,8 @@ class Example extends Module
 		Configuration::deleteByName('EXAMPLE_CONF');
 
 		// Uninstall Tabs
+		$mainTab = new Tab((int)Tab::getIdFromClassName('AdminMainExample'));
+		$mainTab->delete();
 		$tab = new Tab((int)Tab::getIdFromClassName('AdminExample'));
 		$tab->delete();
 		
